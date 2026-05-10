@@ -40,12 +40,12 @@ bcrypt = Bcrypt(app)
 
 
 def get_db_connection():
-
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="speakease"
+        host=os.getenv("MYSQLHOST"),
+        user=os.getenv("MYSQLUSER"),
+        password=os.getenv("MYSQLPASSWORD"),
+        database=os.getenv("MYSQLDATABASE"),
+        port=os.getenv("MYSQLPORT")
     )
 
 # =========================================================
